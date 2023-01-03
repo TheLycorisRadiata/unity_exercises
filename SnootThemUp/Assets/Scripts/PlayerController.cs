@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private static float horizontalInput, speed, xLimit;
+    [SerializeField] private GameObject prefabFood;
 
     void Start()
     {
@@ -32,5 +33,10 @@ public class PlayerController : MonoBehaviour
         horizontalInput = movementVector.x + -movementVector.y;
         if (horizontalInput < -1f) horizontalInput = -1f;
         else if (horizontalInput > 1f) horizontalInput = 1f;
+    }
+
+    void OnFire()
+    {
+        Instantiate(prefabFood, transform.position + new Vector3(0f, 0f, 2f), prefabFood.transform.rotation);
     }
 }
