@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AnimalHandler : MonoBehaviour
 {
-    private static float speed, zLimit;
+    private static float zLimit;
+    private float speed;
 
     void Start()
     {
-        speed = 25f;
         zLimit = -10f;
+        speed = Random.Range(10f, 15f);
     }
 
     void FixedUpdate()
