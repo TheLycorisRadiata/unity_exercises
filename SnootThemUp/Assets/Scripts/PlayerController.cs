@@ -26,17 +26,18 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(clamp, transform.position.y, transform.position.z);
     }
 
-    void OnMove(InputValue axisValue)
+    public void OnMove(InputAction.CallbackContext ctx)
     {
         // Go LEFT (left or up input) and go RIGHT (right or down input)
-        Vector2 movementVector = axisValue.Get<Vector2>();
+        Vector2 movementVector = ctx.ReadValue<Vector2>();
         horizontalInput = movementVector.x + -movementVector.y;
         if (horizontalInput < -1f) horizontalInput = -1f;
         else if (horizontalInput > 1f) horizontalInput = 1f;
     }
 
-    void OnFire()
+    public void OnFire(InputAction.CallbackContext ctx)
     {
-        Instantiate(prefabFood, transform.position + new Vector3(0f, 0f, 2f), prefabFood.transform.rotation);
+        if (ctx.started)
+            Instantiate(prefabFood, transform.position + new Vector3(0f, 0f, 2f), prefabFood.transform.rotation);
     }
 }
