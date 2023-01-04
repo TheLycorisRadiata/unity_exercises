@@ -10,7 +10,7 @@ public class AnimalHandler : MonoBehaviour
     void Start()
     {
         zLimit = -10f;
-        speed = Random.Range(10f, 15f);
+        speed = transform.localScale.x < 10f ? Random.Range(10f, 15f) : Random.Range(7f, 10f);
     }
 
     void FixedUpdate()
@@ -21,5 +21,14 @@ public class AnimalHandler : MonoBehaviour
         // Destroy when out of bounds
         if (transform.position.z < zLimit)
             Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Contains("Steak"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
