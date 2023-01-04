@@ -103,6 +103,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8617370353220208832}
   - component: {fileID: 8617370353212735796}
+  - component: {fileID: -6159174619338671211}
+  - component: {fileID: -2123544282622364518}
   - component: {fileID: 1134956615}
   m_Layer: 0
   m_Name: Beagle
@@ -120,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 8617370353219994006}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8617370353220236914}
@@ -183,6 +185,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &-6159174619338671211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617370353219994006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.6165144, z: 0.6261486}
+  m_Center: {x: 0, y: 0.19174281, z: 0.061542794}
+--- !u!54 &-2123544282622364518
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617370353219994006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1134956615
 MonoBehaviour:
   m_ObjectHideFlags: 0
