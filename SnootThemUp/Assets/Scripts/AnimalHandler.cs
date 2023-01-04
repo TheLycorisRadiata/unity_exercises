@@ -10,6 +10,7 @@ public class AnimalHandler : MonoBehaviour
     void Start()
     {
         zLimit = -10f;
+        // Small animals are faster than big ones 
         speed = transform.localScale.x < 10f ? Random.Range(10f, 15f) : Random.Range(7f, 10f);
     }
 
