@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        speed = 15f;
+        speed = 25f;
         xLimit = 20f;
     }
 
