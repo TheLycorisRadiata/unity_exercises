@@ -20,7 +20,10 @@ public class AnimalHandler : MonoBehaviour
 
         // Destroy when out of bounds
         if (transform.position.z < zLimit)
+        {
+            Debug.Log("Game Over");
             Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
