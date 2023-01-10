@@ -10,5 +10,6 @@ Date: 03/01/23 - 04/01/23
 - **/FetchMeAGoodBoy**  
 Exercises: [Unity Learn / Challenge 2 - Play Fetch](https://learn.unity.com/tutorial/challenge-2-play-fetch-with-random-values-and-arrays)  
 Status: Completed  
-Date: 10/01/23
+Date: 10/01/23  
+Release: [WebGL link (not mobile)](https://play.unity.com/mg/other/fetchmeagoodboy)  
 
