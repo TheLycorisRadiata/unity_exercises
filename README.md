@@ -7,3 +7,8 @@ Exercises: [Unity Learn / Unit 2 - Basic Gameplay / 2.1 -> 2.4](https://learn.un
 Status: Completed  
 Date: 03/01/23 - 04/01/23  
 
+- **/FetchMeAGoodBoy**  
+Exercises: [Unity Learn / Challenge 2 - Play Fetch](https://learn.unity.com/tutorial/challenge-2-play-fetch-with-random-values-and-arrays)  
+Status: Started  
+Date: 10/01/23
+
