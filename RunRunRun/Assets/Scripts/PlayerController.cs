@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        Physics.gravity = new Vector3(0f, -50f, 0f);
         rb = GetComponent<Rigidbody>();
     }
 
     void Start()
     {
-        jumpForce = 10f;
+        jumpForce = 20f;
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
