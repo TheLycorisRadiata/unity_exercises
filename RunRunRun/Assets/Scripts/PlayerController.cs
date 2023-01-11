@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private static Rigidbody rb;
     private static float jumpForce;
     private static bool canJump;
+    public bool gameOver;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         jumpForce = 20f;
+        gameOver = false;
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
@@ -29,8 +31,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision collision)
     {
-        canJump = true;
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over");
+        }
+        else
+            canJump = true;
     }
 }

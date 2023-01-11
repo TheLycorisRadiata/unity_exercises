@@ -1,6 +1,7 @@
 # Unity exercises
 
-Dates are in DMY format.
+Dates are in DMY format.  
+And for the project names, we do a bit of tomfoolery, as a treat.  
 
 - **/SnootThemUp**  
 Exercises: [Unity Learn / Unit 2 - Basic Gameplay / 2.1 -> 2.4](https://learn.unity.com/project/unit-2-basic-gameplay)  
@@ -15,6 +16,6 @@ Release: [WebGL link (not mobile)](https://play.unity.com/mg/other/fetchmeagoodb
 
 - **/RunRunRun**  
 Exercises: [Unity Learn / Unit 3 - Sound and Effects / 3.1 -> 3.4](https://learn.unity.com/project/unit-3-sound-and-effects)  
-Status: Started  
-Date: 11/01/23  
+Status: Ongoing  
+Date: 11/01/23 - 12/01/23  
 
