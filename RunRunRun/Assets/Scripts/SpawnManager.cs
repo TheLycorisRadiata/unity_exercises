@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    private static PlayerController playerControllerScript;
     [SerializeField] private GameObject[] obstaclePrefabs;
     private static Vector3 pos;
     private static float startDelay, repeatRate;
+
+    void Awake()
+    {
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
 
     void Start()
     {
@@ -20,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnObstacle()
     {
         int index = Random.Range(0, obstaclePrefabs.Length);
-        Instantiate(obstaclePrefabs[index], pos, obstaclePrefabs[index].transform.rotation);
+        if (!playerControllerScript.gameOver)
+            Instantiate(obstaclePrefabs[index], pos, obstaclePrefabs[index].transform.rotation);
     }
 }
