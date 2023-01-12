@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
         gameOver = false;
     }
 
+    void LateUpdate()
+    {
+        // If the player jumps right before the game over occurs, they can end up on top of the obstacle, so put them back onto the ground
+        if (gameOver)
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+    }
+
     public void OnJump(InputAction.CallbackContext ctx)
     {
         if (canJump && ctx.started)
@@ -34,11 +41,18 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            gameOver = true;
-            Debug.Log("Game Over");
-        }
+            GameOver();
         else
             canJump = true;
+    }
+
+    private void GameOver()
+    {
+        if (!gameOver)
+        {
+            gameOver = true;
+            canJump = false;
+            Debug.Log("Game Over");
+        }
     }
 }
