@@ -7,16 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     public bool gameOver;
     [SerializeField] private ParticleSystem explosionParticle, dirtParticle;
+    [SerializeField] private AudioClip jumpSound, crashSound;
     private static Rigidbody rb;
     private static Animator anim;
+    private static AudioSource audioSource;
     private static float jumpForce;
     private static bool canJump;
 
     void Awake()
     {
         Physics.gravity = new Vector3(0f, -50f, 0f);
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         if (canJump && ctx.started)
         {
             anim.SetTrigger("Jump_trig");
+            audioSource.PlayOneShot(jumpSound, 1f);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             dirtParticle.Stop();
             canJump = false;
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
             canJump = false;
             explosionParticle.Play();
             dirtParticle.Stop();
+            audioSource.PlayOneShot(crashSound, 1f);
             anim.SetBool("Death_b", true);
             anim.SetInteger("DeathType_int", 1);
             Debug.Log("Game Over");
