@@ -14,6 +14,6 @@ Release: [WebGL link (not mobile)](https://play.unity.com/mg/other/fetchmeagoodb
 
 - **/RunRunRun**  
 Exercises: [Unity Learn / Unit 3 - Sound and Effects / 3.1 -> 3.4](https://learn.unity.com/project/unit-3-sound-and-effects)  
-Status: Ongoing  
-Release: [WebGL link (not mobile)](#)  
+Status: Completed  
+Release: [WebGL link (not mobile)](https://play.unity.com/mg/other/runrunrun-8)  
 
