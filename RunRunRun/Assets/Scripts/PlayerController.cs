@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private static Rigidbody rb;
+    private static Animator anim;
     private static float jumpForce;
     private static bool canJump;
     public bool gameOver;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         Physics.gravity = new Vector3(0f, -50f, 0f);
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -33,8 +35,9 @@ public class PlayerController : MonoBehaviour
     {
         if (canJump && ctx.started)
         {
-            canJump = false;
+            anim.SetTrigger("Jump_trig");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            canJump = false;
         }
     }
 
@@ -52,6 +55,8 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             canJump = false;
+            anim.SetBool("Death_b", true);
+            anim.SetInteger("DeathType_int", 1);
             Debug.Log("Game Over");
         }
     }
