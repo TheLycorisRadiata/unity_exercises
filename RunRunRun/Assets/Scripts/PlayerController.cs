@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver;
+    [SerializeField] private ParticleSystem explosionParticle, dirtParticle;
     private static Rigidbody rb;
     private static Animator anim;
     private static float jumpForce;
     private static bool canJump;
-    public bool gameOver;
 
     void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Jump_trig");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            dirtParticle.Stop();
             canJump = false;
         }
     }
@@ -46,7 +48,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
             GameOver();
         else
+        {
+            dirtParticle.Play();
             canJump = true;
+        }
     }
 
     private void GameOver()
@@ -55,6 +60,8 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             canJump = false;
+            explosionParticle.Play();
+            dirtParticle.Stop();
             anim.SetBool("Death_b", true);
             anim.SetInteger("DeathType_int", 1);
             Debug.Log("Game Over");
