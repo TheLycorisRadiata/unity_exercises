@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         xPosLimit = 20f;
-        zPos = 20f;
+        zPos = 30f;
         rotation = prefabAnimals[0].transform.rotation;
         StartCoroutine(SpawnAnimal());
     }
