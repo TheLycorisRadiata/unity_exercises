@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    private static GameManager gameManager;
+    [SerializeField] private ParticleSystem explosionParticle;
+    private Rigidbody rb;
+
     private static float minSpeed, maxSpeed;
     private static float maxTorque;
     private static float xRange;
     private static float ySpawnPos;
     [SerializeField] private int pointValue;
-
-    private static GameManager gameManager;
-    private Rigidbody rb;
 
     void Awake()
     {
@@ -49,8 +50,9 @@ public class Target : MonoBehaviour
     // When the user clicks on it
     private void OnMouseDown()
     {
-        gameManager.UpdateScore(pointValue);
         Destroy(gameObject);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+        gameManager.UpdateScore(pointValue);
     }
 
     // When it collides with the sensor down below
