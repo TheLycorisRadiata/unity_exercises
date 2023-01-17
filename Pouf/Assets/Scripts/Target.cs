@@ -8,6 +8,9 @@ public class Target : MonoBehaviour
     private static float maxTorque;
     private static float xRange;
     private static float ySpawnPos;
+    [SerializeField] private int pointValue;
+
+    private static GameManager gameManager;
     private Rigidbody rb;
 
     void Awake()
@@ -17,6 +20,7 @@ public class Target : MonoBehaviour
         maxTorque = 10f;
         xRange = 4f;
         ySpawnPos = -6f;
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -45,6 +49,7 @@ public class Target : MonoBehaviour
     // When the user clicks on it
     private void OnMouseDown()
     {
+        gameManager.UpdateScore(pointValue);
         Destroy(gameObject);
     }
 
