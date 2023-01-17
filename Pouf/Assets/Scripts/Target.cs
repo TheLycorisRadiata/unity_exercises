@@ -41,4 +41,16 @@ public class Target : MonoBehaviour
     {
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos, 0f);
     }
+
+    // When the user clicks on it
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    // When it collides with the sensor down below
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }
