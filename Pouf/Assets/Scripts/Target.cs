@@ -50,6 +50,11 @@ public class Target : MonoBehaviour
     // When the user clicks on it
     private void OnMouseDown()
     {
+        GameObject explosion = null;
+
+        if (!gameManager.isGameActive)
+            return;
+
         Destroy(gameObject);
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         gameManager.UpdateScore(pointValue);
@@ -59,5 +64,9 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+
+        // If a good target is missed by the user
+        if (pointValue > 0)
+            gameManager.GameOver();
     }
 }
