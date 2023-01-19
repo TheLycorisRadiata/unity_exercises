@@ -50,8 +50,6 @@ public class Target : MonoBehaviour
     // When the user clicks on it
     private void OnMouseDown()
     {
-        GameObject explosion = null;
-
         if (!gameManager.isGameActive)
             return;
 
