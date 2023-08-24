@@ -12,6 +12,10 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Junior Programmer / Unit 1 - Player Control](https://learn.unity.com/project/unit-1-driving-simulation)  
 [Release](https://play.unity.com/mg/other/watch-out-5)  
 
+- **/DoABarrelRoll**  
+[Junior Programmer / Unit 1 - Challenge](https://learn.unity.com/tutorial/challenge-1-steer-a-plane-through-obstacles-in-the-sky)  
+[Release](https://play.unity.com/mg/other/do-a-barrel-roll)  
+
 ---
 
 - **/SnootThemUp**  
