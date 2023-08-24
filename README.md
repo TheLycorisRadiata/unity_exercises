@@ -8,13 +8,14 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Unity Essentials / Essentials of real-time 2D](https://learn.unity.com/tutorial/challenge-sprite-pachinko)  
 [Release](https://play.unity.com/mg/other/pachinko-2013)  
 
-- **/WatchOut**  
-[Junior Programmer / Unit 1 - Player Control](https://learn.unity.com/project/unit-1-driving-simulation)  
-[Release](https://play.unity.com/mg/other/watch-out-5)  
-
 - **/DoABarrelRoll**  
 [Junior Programmer / Unit 1 - Challenge](https://learn.unity.com/tutorial/challenge-1-steer-a-plane-through-obstacles-in-the-sky)  
 [Release](https://play.unity.com/mg/other/do-a-barrel-roll)  
+
+- **/WatchOut**  
+[Junior Programmer / Unit 1](https://learn.unity.com/project/unit-1-driving-simulation)  
+[Junior Programmer / Unit 1 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-1-share-your-work)  
+[Release](https://play.unity.com/mg/other/watch-out-5)  
 
 ---
 
