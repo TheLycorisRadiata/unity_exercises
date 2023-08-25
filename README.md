@@ -20,15 +20,16 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Junior Programmer / Unit 1 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-1-share-your-work)  
 [Release](https://play.unity.com/mg/other/watch-out-5)  
 
----
+- **/FetchMeAGoodBoy**  
+[Junior Programmer / Unit 2 - Challenge](https://learn.unity.com/tutorial/challenge-2-play-fetch-with-random-values-and-arrays)  
+[Release](https://play.unity.com/mg/other/fetch-me-a-good-boy)  
 
 - **/SnootThemUp**  
-[Unity Learn / Unit 2 - Basic Gameplay / 2.1 -> 2.4](https://learn.unity.com/project/unit-2-basic-gameplay)  
+[Junior Programmer / Unit 2](https://learn.unity.com/project/unit-2-basic-gameplay)  
+[Junior Programmer / Unit 2 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-2-share-your-work)  
 Release  
 
-- **/FetchMeAGoodBoy**  
-[Unity Learn / Challenge 2 - Play Fetch](https://learn.unity.com/tutorial/challenge-2-play-fetch-with-random-values-and-arrays)  
-Release  
+---
 
 - **/RunRunRun**  
 [Unity Learn / Unit 3 - Sound and Effects / 3.1 -> 3.4](https://learn.unity.com/project/unit-3-sound-and-effects)  
