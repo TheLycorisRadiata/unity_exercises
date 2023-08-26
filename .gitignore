@@ -8,6 +8,8 @@
 **/[Mm]emoryCaptures/
 **/[Rr]ecordings/
 
+**/[Aa]ssets/TextMesh\ Pro*
+
 # IDE
 **/[Aa]ssets/Plugins/Editor/JetBrains*
 **/.vs/
