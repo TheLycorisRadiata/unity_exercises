@@ -1,7 +1,6 @@
 # Unity Learn exercises
 
 For the project names, we do a bit of tomfoolery, as a treat.  
-*Release note: On the Unity Play platform, a few things might be broken, including the sound.*  
 
 ## ["Unity Essentials" badge](https://www.credly.com/badges/e065c9d3-fcf4-47af-a1a5-9c47b3c5c0df)
 
@@ -12,7 +11,7 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Unity Essentials / Essentials of real-time audio](https://learn.unity.com/project/essentials-of-real-time-audio)  
 
 - **/Pachinko**  
-[Release](https://play.unity.com/mg/other/pachinko-2013)  
+[Release](https://play.unity.com/mg/other/pachinko-2031)  
 [Unity Essentials / Essentials of real-time 2D](https://learn.unity.com/tutorial/challenge-sprite-pachinko)  
 
 ## "Junior Programmer" badge
@@ -36,7 +35,7 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Junior Programmer / Unit 2 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-2-share-your-work)  
 
 - **/Cube**  
-[Release](https://play.unity.com/mg/other/cube-gksy)  
+[Release](https://play.unity.com/mg/other/cube-kom2)  
 [Junior Programmer / Mod the Cube](https://learn.unity.com/tutorial/mod-the-cube)  
 
 ---

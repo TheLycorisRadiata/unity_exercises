@@ -10,7 +10,7 @@ public class Cube : MonoBehaviour
         transform.localScale = Vector3.one * 1.3f;
 
         _renderer.material.color = new Color(0.5f, 1f, 0.3f, 0.4f);
-        InvokeRepeating("ChangeColorAndOpacityAtRandom", 0.5f, 0.5f);
+        InvokeRepeating("ChangeColorAndOpacityAtRandom", 1f, 1f);
     }
     
     private void Update()
