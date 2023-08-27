@@ -41,11 +41,18 @@ For the project names, we do a bit of tomfoolery, as a treat.
 
 ---
 
+- **/UpYouGo**  
+Release  
+[Junior Programmer / Unit 3 - Challenge](https://learn.unity.com/tutorial/challenge-3-bouncy-balloons-bombs-and-booleans-1)  
+
 - **/RunRunRun**  
 Release  
-[Unity Learn / Unit 3 - Sound and Effects / 3.1 -> 3.4](https://learn.unity.com/project/unit-3-sound-and-effects)  
+[Junior Programmer / Unit 3](https://learn.unity.com/project/unit-3-sound-and-effects)  
+[Junior Programmer / Unit 3 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-3-share-your-work)  
+
+---
 
 - **/Pouf**  
 Release  
-[Unity Learn / Unit 5 - User Interface / 5.1 -> 5.4](https://learn.unity.com/project/unit-5-user-interface)  
+[Junior Programmer / Unit 5](https://learn.unity.com/project/unit-5-user-interface)  
 
