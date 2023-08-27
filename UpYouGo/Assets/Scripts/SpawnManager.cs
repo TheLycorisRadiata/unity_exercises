@@ -2,29 +2,31 @@
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] objectPrefabs;
-    private float spawnDelay = 2f;
-    private float spawnInterval = 1.5f;
+    [SerializeField] private GameObject[] _objectPrefabs;
+    private float _spawnDelay = 2f;
+    private float _spawnInterval = 1.5f;
+    private PlayerController _playerControllerScript;
 
-    private PlayerController playerControllerScript;
+    private void Awake()
+    {
+        _playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
 
     private void Start()
     {
-        InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        InvokeRepeating("SpawnObjects", _spawnDelay, _spawnInterval);
     }
 
-    // Spawn obstacles
     private void SpawnObjects()
     {
-        // Set random spawn location and random object index
-        Vector3 spawnLocation = new Vector3(30f, Random.Range(5f, 15f), 0f);
-        int index = Random.Range(0, objectPrefabs.Length);
+        Vector3 spawnLocation;
+        int index;
 
-        // If game is still active, spawn new object
-        if (!playerControllerScript.gameOver)
-        {
-            Instantiate(objectPrefabs[index], spawnLocation, objectPrefabs[index].transform.rotation);
-        }
+        if (_playerControllerScript.gameOver)
+            return;
+        
+        spawnLocation = new Vector3(30f, Random.Range(5f, 15f), 0f);
+        index = Random.Range(0, _objectPrefabs.Length);
+        Instantiate(_objectPrefabs[index], spawnLocation, _objectPrefabs[index].transform.rotation);
     }
 }

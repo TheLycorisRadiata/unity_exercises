@@ -1,58 +1,76 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
-    public bool gameOver;
+    public bool gameOver { get; private set; }
 
-    public float floatForce;
-    private float gravityModifier = 1.5f;
-    private Rigidbody playerRb;
+    [SerializeField] private InputActionReference _upMovementValue;
+    private float _gravityModifier = 1.5f;
+    private float _floatForce = 7f;
+    private Rigidbody _rb;
 
-    public ParticleSystem explosionParticle;
-    public ParticleSystem fireworksParticle;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _moneySound;
+    [SerializeField] private AudioClip _explodeSound;
 
-    private AudioSource playerAudio;
-    public AudioClip moneySound;
-    public AudioClip explodeSound;
+    [SerializeField] private ParticleSystem _explosionParticle;
+    [SerializeField] private ParticleSystem _fireworksParticle;
+
+    private void Awake()
+    {
+        gameOver = false;
+        Physics.gravity *= _gravityModifier;
+        _rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
+        SubscribeToAction();
+    }
 
     private void Start()
     {
-        Physics.gravity *= gravityModifier;
-        playerAudio = GetComponent<AudioSource>();
-
         // Apply a small upward force at the start of the game
-        playerRb = GetComponent<Rigidbody>();
-        playerRb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
-
-    }
-
-    private void Update()
-    {
-        // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
-        {
-            playerRb.AddForce(Vector3.up * floatForce);
-        }
+        _rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        // If player collides with bomb, explode and set gameOver to true
         if (other.gameObject.CompareTag("Bomb"))
         {
-            explosionParticle.Play();
-            playerAudio.PlayOneShot(explodeSound, 1f);
-            gameOver = true;
-            Debug.Log("Game Over!");
+            _explosionParticle.Play();
+            _audioSource.PlayOneShot(_explodeSound, 1f);
             Destroy(other.gameObject);
-        } 
-
-        // If player collides with money, fireworks
+            GameOver();
+        }
         else if (other.gameObject.CompareTag("Money"))
         {
-            fireworksParticle.Play();
-            playerAudio.PlayOneShot(moneySound, 1f);
+            _fireworksParticle.Play();
+            _audioSource.PlayOneShot(_moneySound, 1f);
             Destroy(other.gameObject);
         }
+    }
+
+    private void SubscribeToAction()
+    {
+        _upMovementValue.action.started += MoveUp;
+    }
+
+    private void UnsubscribeFromAction()
+    {
+        _upMovementValue.action.started -= MoveUp;
+    }
+
+    private void MoveUp(InputAction.CallbackContext context)
+    {
+        if (transform.position.y > 15f)
+            return;
+        _rb.AddForce(Vector3.up * _floatForce, ForceMode.Impulse);
+    }
+
+    private void GameOver()
+    {
+        gameOver = true;
+        UnsubscribeFromAction();
     }
 }

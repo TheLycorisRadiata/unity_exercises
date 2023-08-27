@@ -2,10 +2,10 @@
 
 public class SpinObjects : MonoBehaviour
 {
-    public float spinSpeed;
+    [SerializeField] private float _spinSpeed;
 
     private void Update()
     {
-        transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, _spinSpeed * Time.deltaTime);
     }
 }
