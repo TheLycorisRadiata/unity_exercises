@@ -1,20 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    private static PlayerController playerControllerScript;
-    [SerializeField] private float speed;
+    private float _speed = 15f;
 
-    void Awake()
+    private void FixedUpdate()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-    }
-
-    void FixedUpdate()
-    {
-        if (!playerControllerScript.gameOver)
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        if (!PlayerController.instance.gameOver)
+            transform.Translate(Vector3.left * _speed * PlayerController.instance.speedMultiplier * Time.deltaTime);
     }
 }

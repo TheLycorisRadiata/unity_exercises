@@ -1,25 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class RepeatBackground : MonoBehaviour
 {
-    private static float repeatWidth;
-    private static Vector3 startPos;
+    private float _repeatWidth;
+    private Vector3 _startPos;
 
-    void Awake()
+    private void Awake()
     {
-        repeatWidth = GetComponent<BoxCollider>().size.x / 2;
+        _repeatWidth = GetComponent<BoxCollider>().size.x / 2;
+        _startPos = transform.position;
     }
 
-    void Start()
+    private void Update()
     {
-        startPos = transform.position;
-    }
-
-    void Update()
-    {
-        if (transform.position.x < startPos.x - repeatWidth)
-            transform.position = startPos;
+        if (transform.position.x < _startPos.x - _repeatWidth)
+            transform.position = _startPos;
     }
 }

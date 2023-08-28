@@ -1,32 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private static PlayerController playerControllerScript;
-    [SerializeField] private GameObject[] obstaclePrefabs;
-    private static Vector3 pos;
-    private static float startDelay, repeatRate;
+    [SerializeField] private GameObject[] _obstaclePrefabs;
+    private Vector3 _pos = new Vector3(35f, 0f, 0f);
+    private float _startDelay = 1f;
+    private float _repeatRate = 2f;
 
-    void Awake()
+    private void Start()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-    }
-
-    void Start()
-    {
-        pos = new Vector3(35f, 0f, 0f);
-        startDelay = 1f;
-        repeatRate = 2f;
-
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        InvokeRepeating("SpawnObstacle", _startDelay, _repeatRate);
     }
 
     private void SpawnObstacle()
     {
-        int index = Random.Range(0, obstaclePrefabs.Length);
-        if (!playerControllerScript.gameOver)
-            Instantiate(obstaclePrefabs[index], pos, obstaclePrefabs[index].transform.rotation);
+        int index = Random.Range(0, _obstaclePrefabs.Length);
+        if (!PlayerController.instance.gameOver)
+            Instantiate(_obstaclePrefabs[index], _pos, _obstaclePrefabs[index].transform.rotation);
     }
 }

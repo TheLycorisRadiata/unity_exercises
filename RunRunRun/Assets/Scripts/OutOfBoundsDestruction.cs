@@ -1,19 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OutOfBoundsDestruction : MonoBehaviour
 {
-    private static float xLimit;
+    private float _xLimit = 20f;
 
-    void Start()
+    private void FixedUpdate()
     {
-        xLimit = 20f;
-    }
-
-    void FixedUpdate()
-    {
-        if (transform.position.x < -xLimit)
+        if (transform.position.x < -_xLimit)
             Destroy(gameObject);
     }
 }

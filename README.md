@@ -42,12 +42,12 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Release](https://play.unity.com/mg/other/up-you-go)  
 [Junior Programmer / Unit 3 - Challenge](https://learn.unity.com/tutorial/challenge-3-bouncy-balloons-bombs-and-booleans-1)  
 
----
-
 - **/RunRunRun**  
 Release  
 [Junior Programmer / Unit 3](https://learn.unity.com/project/unit-3-sound-and-effects)  
 [Junior Programmer / Unit 3 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-3-share-your-work)  
+
+---
 
 - **/Pouf**  
 Release  
