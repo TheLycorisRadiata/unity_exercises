@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -8,7 +9,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    public bool gameOver { get; private set; }
+    public bool gameOngoing { get; private set; }
     public int speedMultiplier { get; private set; }
     [SerializeField] private InputActionReference _jumpValue;
     [SerializeField] private InputActionReference _dashValue;
@@ -30,12 +31,36 @@ public class PlayerController : MonoBehaviour
         else
             Destroy(this);
 
-        gameOver = false;
         speedMultiplier = 1;
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
         Physics.gravity = new Vector3(0f, -50f, 0f);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(WalkIntoScene());
+    }
+
+    private IEnumerator WalkIntoScene()
+    {
+        float time = 0f;
+        float speed = 4f;
+        Vector3 targetPos = transform.position;
+        Vector3 startPos = targetPos - new Vector3(5f, 0f, 0f);
+        transform.position = startPos;
+ 
+        _anim.speed = 0.5f;
+        while (transform.position != targetPos)
+        {
+            transform.position = Vector3.Lerp(startPos, targetPos, (time / Vector3.Distance(startPos, targetPos)) * speed);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        _anim.speed = 1f;
+        gameOngoing = true;
 
         _jumpValue.action.started += Jump;
         _dashValue.action.started += Dash;
@@ -81,13 +106,13 @@ public class PlayerController : MonoBehaviour
 
     private void GameOver()
     {
-        if (gameOver)
+        if (!gameOngoing)
             return;
 
         // If jump right before game over: player can end up on top of the obstacle, so put them back onto the ground
         transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
 
-        gameOver = true;
+        gameOngoing = false;
         _allowedJumps = 0;
         _explosionParticle.Play();
         _dirtParticle.Stop();
