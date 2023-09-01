@@ -1,3 +1,8 @@
+# Temporary files
+~*
+*.swp
+
+# Unity folders
 **/[Ll]ibrary/
 **/[Tt]emp/
 **/[Oo]bj/
