@@ -62,3 +62,5 @@ Release
 Release  
 [Junior Programmer / Unit 5](https://learn.unity.com/project/unit-5-user-interface)  
 
+For "Watch Out": [Unit 6.2](https://learn.unity.com/tutorial/lesson-6-2-research-and-troubleshooting)  
+
