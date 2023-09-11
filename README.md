@@ -56,11 +56,12 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Junior Programmer / Unit 4](https://learn.unity.com/project/unit-4-gameplay-mechanics)  
 [Junior Programmer / Unit 4 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-4-share-your-work)  
 
----
+- CHALLENGE  
 
 - **/Pouf**  
-Release  
+[Release](https://play.unity.com/mg/other/pouf-qvw7)  
 [Junior Programmer / Unit 5](https://learn.unity.com/project/unit-5-user-interface)  
+[Junior Programmer / Unit 5 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-5-share-your-work)  
 
 For "Watch Out": [Unit 6.2](https://learn.unity.com/tutorial/lesson-6-2-research-and-troubleshooting)  
 

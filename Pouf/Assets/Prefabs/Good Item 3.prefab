@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4503370677697722050}
   - component: {fileID: 4503370677697722052}
   m_Layer: 0
-  m_Name: Good 2
+  m_Name: Good Item 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,4 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 625621707174889904, guid: ef43e5aef41c142fb85a7658a397dc75, type: 3}
+  audioSource: {fileID: 0}
   pointValue: 10

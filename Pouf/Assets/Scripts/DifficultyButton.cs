@@ -1,23 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Difficulty
+{
+    Easy,
+    Medium,
+    Hard
+}
+
+[RequireComponent(typeof(Button))]
 public class DifficultyButton : MonoBehaviour
 {
-    [SerializeField] private int difficulty;
-    private GameManager gameManager;
+    [SerializeField] private Difficulty difficulty;
+    [SerializeField] private AudioSource audioSource;
     private Button button;
 
-    void Awake()
+    private void Awake()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDifficulty);
     }
 
     private void SetDifficulty()
     {
-        gameManager.StartGame(difficulty);
+        audioSource.Play();
+        GameManager.Instance.StartGame(difficulty);
     }
 }

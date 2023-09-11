@@ -1,48 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Target : MonoBehaviour
 {
-    private static GameManager gameManager;
     [SerializeField] private ParticleSystem explosionParticle;
-    private Rigidbody rb;
-
-    private static float minSpeed, maxSpeed;
-    private static float maxTorque;
-    private static float xRange;
-    private static float ySpawnPos;
     [SerializeField] private int pointValue;
+    private Rigidbody rb;
+    private AudioSource audioSource;
+    private float minSpeed = 15f, maxSpeed = 20f;
+    private float maxTorque = 10f;
+    private float xRange = 4f;
+    private float ySpawnPos = -6f;
 
-    void Awake()
+    private void Awake()
     {
-        minSpeed = 15f;
-        maxSpeed = 20f;
-        maxTorque = 10f;
-        xRange = 4f;
-        ySpawnPos = -6f;
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GameObject.Find("Sounds/" + gameObject.name.Split('(')[0]).GetComponent<AudioSource>();
     }
 
-    void Start()
+    private void Start()
     {
         rb.AddForce(RandomForce(), ForceMode.Impulse);
         rb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPosition();
     }
 
-    Vector3 RandomForce()
+    private Vector3 RandomForce()
     {
         return Vector3.up * Random.Range(minSpeed, maxSpeed);
     }
 
-    float RandomTorque()
+    private float RandomTorque()
     {
         return Random.Range(-maxTorque, maxTorque);
     }
 
-    Vector3 RandomSpawnPosition()
+    private Vector3 RandomSpawnPosition()
     {
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos, 0f);
     }
@@ -50,12 +43,18 @@ public class Target : MonoBehaviour
     // When the user clicks on it
     private void OnMouseDown()
     {
-        if (!gameManager.isGameActive)
+        DestroyTarget();
+    }
+
+    public void DestroyTarget()
+    {
+        if (!GameManager.Instance.IsGameActive)
             return;
 
         Destroy(gameObject);
+        audioSource.Play();
         Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
+        GameManager.Instance.UpdateScore(pointValue);
     }
 
     // When it collides with the sensor down below
@@ -65,6 +64,6 @@ public class Target : MonoBehaviour
 
         // If a good target is missed by the user
         if (pointValue > 0)
-            gameManager.GameOver();
+            GameManager.Instance.UpdateLives(-1);
     }
 }
