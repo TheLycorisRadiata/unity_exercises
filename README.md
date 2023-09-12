@@ -71,3 +71,7 @@ Unity version in this repo: 2022.3.7f1.
 [Release](https://play.unity.com/mg/other/into-the-box)  
 [Junior Programmer / Counting Prototype](https://learn.unity.com/tutorial/counting-prototype)  
 
+- **/CongratScript**  
+[Release](https://play.unity.com/mg/other/congratscript)  
+[Junior Programmer / Debug the App](https://learn.unity.com/tutorial/debug-the-app)  
+
