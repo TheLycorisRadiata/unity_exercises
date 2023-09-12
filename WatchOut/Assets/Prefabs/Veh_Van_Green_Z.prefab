@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7470611027228714114}
   - component: {fileID: 6918652739792222783}
   - component: {fileID: 2093262934754314535}
+  - component: {fileID: 6593767977345325051}
   m_Layer: 0
   m_Name: Veh_Van_Green_Z
   m_TagString: Untagged
@@ -256,6 +257,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a64d202a821b7f3fe954327106137a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6593767977345325051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdb05bca169b14d4a8389e9f6ae0fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &152928
