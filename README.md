@@ -24,6 +24,7 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Release](https://play.unity.com/mg/other/watch-out-5)  
 [Junior Programmer / Unit 1](https://learn.unity.com/project/unit-1-driving-simulation)  
 [Junior Programmer / Unit 1 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-1-share-your-work)  
+[Junior Programmer / Unit 6.2](https://learn.unity.com/tutorial/lesson-6-2-research-and-troubleshooting)  
 
 - **/FetchMeAGoodBoy**  
 [Release](https://play.unity.com/mg/other/fetch-me-a-good-boy)  
@@ -56,12 +57,12 @@ For the project names, we do a bit of tomfoolery, as a treat.
 [Junior Programmer / Unit 4](https://learn.unity.com/project/unit-4-gameplay-mechanics)  
 [Junior Programmer / Unit 4 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-4-share-your-work)  
 
-- CHALLENGE  
+- **/WhackWhack**  
+[Release](https://play.unity.com/mg/other/whack-whack-1)  
+[Junior Programmer / Unit 5 - Challenge](https://learn.unity.com/tutorial/challenge-5-whack-a-food-with-wacky-ui)  
 
 - **/Pouf**  
 [Release](https://play.unity.com/mg/other/pouf-qvw7)  
 [Junior Programmer / Unit 5](https://learn.unity.com/project/unit-5-user-interface)  
 [Junior Programmer / Unit 5 - Bonus Features](https://learn.unity.com/tutorial/bonus-features-5-share-your-work)  
-
-For "Watch Out": [Unit 6.2](https://learn.unity.com/tutorial/lesson-6-2-research-and-troubleshooting)  
 
