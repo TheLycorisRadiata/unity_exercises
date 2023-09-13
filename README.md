@@ -75,6 +75,10 @@ Unity version in this repo: 2022.3.7f1.
 [Release](https://play.unity.com/mg/other/congratscript)  
 [Junior Programmer / Debug the App](https://learn.unity.com/tutorial/debug-the-app)  
 
+- **/Breakout**  
+[Release](https://play.unity.com/mg/other/breakout-44)  
+[Junior Programmer / Data persistence](https://learn.unity.com/tutorial/submission-data-persistence-in-a-new-repo)  
+
 - **/StackThoseShelves**  
 Release  
 [Junior Programmer / Manage scene flow and data](https://learn.unity.com/mission/programming-systems-and-architecture)  
