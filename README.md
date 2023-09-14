@@ -15,7 +15,7 @@ Unity version in this repo: 2022.3.7f1.
 [Release](https://play.unity.com/mg/other/pachinko-2031)  
 [Unity Essentials / Essentials of real-time 2D](https://learn.unity.com/tutorial/challenge-sprite-pachinko)  
 
-## "Junior Programmer" badge
+## ["Junior Programmer" badge](https://www.credly.com/badges/d8bd9b9b-c439-4a4c-8ff8-e6e4ed9d4088)
 
 - **/DoABarrelRoll**  
 [Release](https://play.unity.com/mg/other/do-a-barrel-roll)  
